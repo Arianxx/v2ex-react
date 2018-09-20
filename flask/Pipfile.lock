@@ -1,0 +1,82 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "20f1200ab47cfe6bfa9705fd91b3d5adfc85bf1e5a159942783208574acf46c3"
+        },
+        "host-environment-markers": {
+            "implementation_name": "cpython",
+            "implementation_version": "3.6.3",
+            "os_name": "nt",
+            "platform_machine": "AMD64",
+            "platform_python_implementation": "CPython",
+            "platform_release": "10",
+            "platform_system": "Windows",
+            "platform_version": "10.0.17754",
+            "python_full_version": "3.6.3",
+            "python_version": "3.6",
+            "sys_platform": "win32"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.6"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "certifi": {
+            "hashes": [],
+            "version": "==2018.8.24"
+        },
+        "chardet": {
+            "hashes": [],
+            "version": "==3.0.4"
+        },
+        "click": {
+            "hashes": [],
+            "version": "==6.7"
+        },
+        "flask": {
+            "hashes": [],
+            "version": "==1.0.2"
+        },
+        "idna": {
+            "hashes": [],
+            "version": "==2.7"
+        },
+        "itsdangerous": {
+            "hashes": [],
+            "version": "==0.24"
+        },
+        "jinja2": {
+            "hashes": [],
+            "version": "==2.10"
+        },
+        "markupsafe": {
+            "hashes": [],
+            "version": "==1.0"
+        },
+        "python-dotenv": {
+            "hashes": [],
+            "version": "==0.9.1"
+        },
+        "requests": {
+            "hashes": [],
+            "version": "==2.19.1"
+        },
+        "urllib3": {
+            "hashes": [],
+            "version": "==1.23"
+        },
+        "werkzeug": {
+            "hashes": [],
+            "version": "==0.14.1"
+        }
+    },
+    "develop": {}
+}
