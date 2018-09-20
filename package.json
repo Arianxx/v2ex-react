@@ -1,0 +1,18 @@
+{
+  "name": "a",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-scripts": "1.1.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "prebuild": "rm -rf ./flask/app/build",
+    "postbuild": "mv -f build ./flask/app/ && cd flask && pipenv run python manage.py",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
