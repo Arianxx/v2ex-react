@@ -27,17 +27,13 @@ API_URLS = [
 ]
 
 
-@app.route('/')
-def main():
-    return render_template('index.html')
-
-
-@app.route('/<path:path>')
+# 防止与设定为'/<filename>'的静态文件url冲突，加上/api/前缀
+@app.route('/api/<path:path>')
 def query(path):
-    if request.path not in API_URLS:
+    if '/api/' + path not in API_URLS:
         abort(404)
 
-    path = app.config.get(('PROXY_HOST_NAME')) + request.path + '?'
+    path = app.config.get(('PROXY_HOST_NAME')) + path + '?'
     path += '&'.join(name + '=' + value for
                      name, value in request.args.items())
     res = requests.get(path)
@@ -45,3 +41,8 @@ def query(path):
         abort(404)
     else:
         return jsonify(res.json())
+
+
+@app.route('/')
+def main():
+    return render_template('index.html')
