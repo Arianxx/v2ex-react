@@ -24,7 +24,7 @@ export const urls = {
 };
 
 
-export const getRequest = (url, params = [], others = {}) => {
+export const getRequest = (url, params = {}, others = {}) => {
   url += '?';
   const paramsArray = [];
   Object.keys(params).forEach((name) => paramsArray.push('name' + '=' + params[name]));
@@ -33,7 +33,9 @@ export const getRequest = (url, params = [], others = {}) => {
 };
 
 
-export const fetchData = (component, successAction, request) => {
+export const normalFetchData = (successAction, getRequestFunc) => (component, params = {}) => {
+  const request = getRequestFunc(params);
+
   store.dispatch(stateActions.startRequest(component));
   return async () => {
     try {
@@ -47,3 +49,11 @@ export const fetchData = (component, successAction, request) => {
     }
   }
 };
+
+
+export const normalFetchSuccess = (type, dataClean = data => data, othersStatic = {}) => (data, othersDynamic = {}) => ({
+  type: type,
+  data: dataClean(data),
+  ...othersStatic,
+  ...othersDynamic,
+});

@@ -1,4 +1,4 @@
-import {fetchData, getRequest, urls} from "../../utils/api";
+import {getRequest, normalFetchData, normalFetchSuccess, urls} from "../../utils/utils";
 
 
 const initialState = {
@@ -14,29 +14,19 @@ export const types = {
 
 
 // action creators
-export const actions = {
-  getSiteInfo: (component) => {
-    return fetchData(component, actions.getSiteInfoSuccess, getRequest(urls.getSiteInfo));
-  },
+const successActions = {
+  getSiteInfoSuccess: normalFetchSuccess(types.GET_SITE_INFO),
 
-  getSiteInfoSuccess: (data) => {
-    return {
-      type: types.GET_SITE_INFO,
-      data: data
-    }
-  },
-
-  getSiteState: (component) => {
-    return fetchData(component, actions.getSiteStateSuccess, getRequest(urls.getSiteState));
-  },
-
-  getSiteStateSuccess: (data) => {
-    return {
-      type: types.GET_SITE_STATES,
-      data: data
-    }
-  }
+  getSiteStateSuccess: normalFetchSuccess(types.GET_SITE_STATES),
 };
+
+const fetchActions = {
+  getSiteInfo: normalFetchData(successActions.getSiteInfoSuccess, () => getRequest(urls.getSiteInfo)),
+
+  getSiteState: normalFetchData(successActions.getSiteStateSuccess, () => getRequest(urls.getSiteState)),
+};
+
+export const actions = {...successActions, ...fetchActions};
 
 
 // reducer
