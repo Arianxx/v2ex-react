@@ -34,17 +34,16 @@ export const getRequest = (url, params = [], others = {}) => {
 
 
 export const fetchData = (component, successAction, request) => {
-  const promise = async () => {
-    const res = await fetch(request);
-    return await res.json()
-  };
-
   store.dispatch(stateActions.startRequest(component));
+  return async () => {
+    try {
+      const res = await fetch(request);
+      const data = await res.json();
 
-  return () => promise().then(data => {
-    store.dispatch(stateActions.finishRequest(component));
-    store.dispatch(successAction(data));
-  }).catch(error => {
-    store.dispatch(stateActions.requestError(component, error));
-  });
+      store.dispatch(stateActions.finishRequest(component));
+      store.dispatch(successAction(data));
+    } catch (err) {
+      store.dispatch(stateActions.requestError(component));
+    }
+  }
 };
