@@ -16,9 +16,9 @@ API_URLS = [
 
     # TOPIC
     '/api/topics/latest.json',  # 取最新主题
-    '/api/topics/hot.json',  # 取最新主题
+    '/api/topics/hot.json',  # 取最热主题
     '/api/topics/show.json',  # 取主题消息
-    # 根据提供信息取主题， 参数{username: 根据用户名, node_id:节点id， node_name:节点名}(选其一)
+    # 根据提供信息取主题， 参数{id:主题id，username: 根据用户名, node_id:节点id， node_name:节点名}(选其一)
     '/api/topics/show.json',
     '/api/replies/show.json',  # 取主题回复，参数{topic_id: 主题id(必选)，page, page_size}
 
