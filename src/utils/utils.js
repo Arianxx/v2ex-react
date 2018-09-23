@@ -20,7 +20,7 @@ export const urls = {
   getReplies: '/api/replies/show.json',
 
   // MEMBERS
-  getMembersInfo: '/api/members/show.json',
+  getMemberInfo: '/api/members/show.json',
 };
 
 
