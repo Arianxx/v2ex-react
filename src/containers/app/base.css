@@ -1,0 +1,8 @@
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    padding-bottom: 100px;
+}
