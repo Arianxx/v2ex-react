@@ -12,7 +12,7 @@ const DotDivider = () => (
 );
 
 
-export default class TopicPreview extends Component {
+export default class TopicPreviewItem extends Component {
   render() {
     return (
       <div className='topicPreview'>
@@ -53,7 +53,7 @@ export default class TopicPreview extends Component {
   }
 }
 
-TopicPreview.propTypes = {
+TopicPreviewItem.propTypes = {
   topic: PropTypes.object.isRequired,
   member: PropTypes.object.isRequired,
   node: PropTypes.object.isRequired

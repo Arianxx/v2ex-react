@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 
 import SplitLayout from '../../components/layout/split';
-import TopicPreview from '../../components/topic/topicPreview';
+import TopicPreviewItem from '../../components/topic/topicPreviewItem';
+import TopicList from '../../components/topic/topicList';
 
 
 const FAKE_TOPIC = {
@@ -26,7 +27,9 @@ export default class Home extends Component {
     return (
       <SplitLayout>
         <SplitLayout.LeftComponents>
-          <TopicPreview member={FAKE_TOPIC.member} topic={FAKE_TOPIC.topic} node={FAKE_TOPIC.node}/>
+          <TopicList>
+            <TopicPreviewItem member={FAKE_TOPIC.member} topic={FAKE_TOPIC.topic} node={FAKE_TOPIC.node}/>
+          </TopicList>
         </SplitLayout.LeftComponents>
         <SplitLayout.RightComponents>
           Right
