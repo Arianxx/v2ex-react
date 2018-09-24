@@ -3,8 +3,6 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types';
 
-import Header from '../../components/header';
-import Footer from '../../components/footer';
 import {getPageLoadingState} from "../../redux/modules/app";
 import {actions as appActions} from "../../redux/modules/app";
 
@@ -77,21 +75,11 @@ class _PageLoading extends PureComponent {
 
   render() {
     if (this.state.loading) {
-      return (
-        <div>
-          <Header/>
-          <Footer/>
-        </div>
-      )
+      return null;
     }
     else if (this.state.loadingTimeout) {
-      return (
-        <div>
-          <Header/>
-          Timeout
-          <Footer/>
-        </div>
-      )
+      // todo 重新加载本组件的页面
+      return "timeout";
     }
     else {
       return this.props.children;

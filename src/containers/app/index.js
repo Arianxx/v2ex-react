@@ -25,21 +25,23 @@ class _App extends Component {
 
   render() {
     return (
-      <PageLoading>
+      <div>
         <Header/>
         <ErrorBoundary>
-          <Grid>
-            <Row>
-              <Col xs={1}/>
-              <Col xs={10}>
-                {this.props.children}
-              </Col>
-              <Col xs={1}/>
-            </Row>
-          </Grid>
+          <PageLoading>
+            <Grid>
+              <Row>
+                <Col xs={1}/>
+                <Col xs={10}>
+                  {this.props.children}
+                </Col>
+                <Col xs={1}/>
+              </Row>
+            </Grid>
+          </PageLoading>
         </ErrorBoundary>
         <Footer/>
-      </PageLoading>
+      </div>
     )
   }
 }
