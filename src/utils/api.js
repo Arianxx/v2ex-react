@@ -24,6 +24,7 @@ export const urls = {
 };
 
 
+// 根据参数构建请求对象
 export const getRequest = (url, params = {}, others = {}) => {
   url += '?';
   const paramsArray = [];
@@ -33,6 +34,8 @@ export const getRequest = (url, params = {}, others = {}) => {
 };
 
 
+// 本app中redux异步加载数据的常用流程。指定请求成功后的action，及构建用于fetch函数的request对象的函数，生成自动
+// 根据异步流程dispatch的action函数。
 export const normalFetchData = (successAction, getRequestFunc) => (component, params = {}) => {
   const request = getRequestFunc(params);
 
@@ -51,6 +54,7 @@ export const normalFetchData = (successAction, getRequestFunc) => (component, pa
 };
 
 
+// 指定获取数据后要触发的reducer type类型，将获取的数据按常用的方式传出。
 export const normalFetchSuccess = (type, dataClean = data => data, othersStatic = {}) => (data, othersDynamic = {}) => ({
   type: type,
   data: dataClean(data),

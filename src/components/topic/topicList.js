@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {ListGroup, ListGroupItem} from 'react-bootstrap';
 
 
-export default class TopicList extends Component {
+export default class TopicList extends PureComponent {
   render() {
     return (
       <ListGroup>

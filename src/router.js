@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {
   HashRouter as Router,
   Route,
@@ -8,7 +8,7 @@ import {
 import Home from './containers/app/home';
 
 
-export default class AppRouter extends Component {
+export default class AppRouter extends PureComponent {
   render() {
     return (
       <Router>

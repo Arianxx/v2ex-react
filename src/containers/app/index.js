@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types';
@@ -13,7 +13,7 @@ import {actions as appActions} from '../../redux/modules/app';
 import './base.css';
 
 
-class _App extends Component {
+class _App extends PureComponent {
   //todo 应该在各页面里面单独发送加载完成的通知
   componentDidMount() {
     this.props.loadingEnd();

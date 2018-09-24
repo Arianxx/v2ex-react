@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {Jumbotron} from 'react-bootstrap';
 
 import './error.css';
 
 
-export default class ErrorBoundary extends Component {
+export default class ErrorBoundary extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {hasError: false}

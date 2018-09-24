@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PureComponent} from 'react';
 import {Row, Col} from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
@@ -51,7 +51,7 @@ RightComponents.defaultProps = {
 };
 
 
-class SplitLayout extends Component {
+class SplitLayout extends PureComponent {
   render() {
     return (
       <Row>

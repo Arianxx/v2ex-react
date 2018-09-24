@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 
 import App from './index';
 import SplitLayout from '../../components/layout/split';
@@ -26,7 +26,7 @@ const FAKE_TOPIC = {
 };
 
 
-export default class Home extends Component {
+export default class Home extends PureComponent {
   render() {
     return (
       <App>

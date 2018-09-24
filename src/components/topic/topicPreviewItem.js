@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {Badge} from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
@@ -12,7 +12,7 @@ const DotDivider = () => (
 );
 
 
-export default class TopicPreviewItem extends Component {
+export default class TopicPreviewItem extends PureComponent {
   render() {
     return (
       <div className='topicPreview'>
