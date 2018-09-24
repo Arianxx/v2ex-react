@@ -7,6 +7,7 @@ import {Grid, Row, Col} from 'react-bootstrap';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import {PageLoading} from '../../components/loading/pageLoading';
+import ErrorBoundary from '../../components/error';
 import {actions as appActions} from '../../redux/modules/app';
 
 import './base.css';
@@ -21,15 +22,17 @@ class _App extends PureComponent {
     return (
       <PageLoading>
         <Header/>
-        <Grid>
-          <Row>
-            <Col sm={1} md={2}/>
-            <Col sm={10} md={8}>
-              {this.props.children}
-            </Col>
-            <Col sm={1} md={2}/>
-          </Row>
-        </Grid>
+        <ErrorBoundary>
+          <Grid>
+            <Row>
+              <Col xs={1}/>
+              <Col xs={10}>
+                {this.props.children}
+              </Col>
+              <Col xs={1}/>
+            </Row>
+          </Grid>
+        </ErrorBoundary>
         <Footer/>
       </PageLoading>
     )
@@ -37,7 +40,7 @@ class _App extends PureComponent {
 }
 
 _App.propTypes = {
-  loadingEnd: PropTypes.func.required
+  loadingEnd: PropTypes.func.isRequired
 };
 
 const mapDispatchToProps = dispatch => ({

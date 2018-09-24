@@ -34,7 +34,7 @@ class _PageLoading extends PureComponent {
 }
 
 _PageLoading.propTypes = {
-  loading: PropTypes.bool.required,
+  loading: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = (state) => {

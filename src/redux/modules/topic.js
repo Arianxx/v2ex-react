@@ -1,4 +1,4 @@
-import {urls, getRequest, normalFetchData, normalFetchSuccess} from '../../utils/utils'
+import {urls, getRequest, normalFetchData, normalFetchSuccess} from '../../utils/api'
 
 
 const initialState = {

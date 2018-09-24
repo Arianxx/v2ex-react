@@ -1,0 +1,67 @@
+.topicPreview {
+    background-color: #f8f8f8;
+    border-color: lightgrey;
+    padding: 10px;
+}
+
+.topicPreviewTable {
+    width: 100%;
+}
+
+.dotDivider {
+    color: grey;
+    margin: 0 5px 0 5px;
+}
+
+.topicImgCol {
+    width: 48px;
+    vertical-align: top;
+}
+
+.topicDivider {
+    width: 10px;
+}
+
+.topicPreviewBody {
+    width: auto;
+}
+
+.topicTitle {
+    margin: 0 0 10px 0;
+}
+
+.topicTitleLink {
+    color: grey;
+}
+
+.topicNode {
+    padding: 3px;
+    color: #999;
+    background-color: #f5f5f1;
+}
+
+.topicMemberName {
+    font-weight: bold;
+}
+
+.topicTime {
+    color: grey;
+}
+
+.topicLastReplyPrompt {
+    color: grey;
+}
+
+.topicLastReply {
+    font-weight: bold;
+}
+
+.topicReplies {
+    width: 70px;
+}
+
+.topicRepliesNum {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}

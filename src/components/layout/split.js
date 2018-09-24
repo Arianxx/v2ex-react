@@ -3,25 +3,12 @@ import {Row, Col} from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 
-const generateRows = (components) => {
-  return components.map ? components.map(c => (
-    <Row>
-      {c}
-    </Row>
-  )) : (
-    <Row>
-      {components}
-    </Row>
-  )
-};
-
-
 class LeftComponents extends Component {
   render() {
     return (
       <Col {...this.props.grid}>
         {
-          generateRows(this.props.children)
+          this.props.children
         }
       </Col>
     )
@@ -35,7 +22,7 @@ LeftComponents.propTypes = {
 LeftComponents.defaultProps = {
   grid: {
     xs: 12,
-    md: 9
+    md: 8
   }
 };
 
@@ -45,7 +32,7 @@ class RightComponents extends Component {
     return (
       <Col {...this.props.grid}>
         {
-          generateRows(this.props.children)
+          this.props.children
         }
       </Col>
     )
@@ -59,7 +46,7 @@ RightComponents.propTypes = {
 RightComponents.defaultProps = {
   grid: {
     xs: 12,
-    md: 3
+    md: 4
   }
 };
 

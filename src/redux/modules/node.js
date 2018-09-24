@@ -1,4 +1,4 @@
-import {getRequest, normalFetchData, normalFetchSuccess, urls} from "../../utils/utils";
+import {getRequest, normalFetchData, normalFetchSuccess, urls} from "../../utils/api";
 
 const initialState = {
   nodes: {

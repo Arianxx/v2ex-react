@@ -7,7 +7,7 @@ import './header.css'
 export default class Header extends PureComponent {
   render() {
     return (
-      <Navbar>
+      <Navbar className='appNavbar'>
         <Navbar.Header>
           <Navbar.Brand>
             <a href='#'>V2EX</a>
@@ -15,6 +15,9 @@ export default class Header extends PureComponent {
           <Navbar.Toggle/>
         </Navbar.Header>
         <Navbar.Collapse>
+          <Navbar.Text>
+            创意工作者们的社区
+          </Navbar.Text>
           <Nav pullRight>
             <NavItem href='#'>
               首页
