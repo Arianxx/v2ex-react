@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import {phpTimeToNow} from "../../utils/format";
 
-import './topicPreview.css';
+import './topicPreviewItem.css';
 
 
 const DotDivider = () => (

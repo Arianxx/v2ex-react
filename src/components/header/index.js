@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react';
+import {Link} from 'react-router-dom';
 import {Navbar, NavItem, Nav} from 'react-bootstrap';
 
 import './header.css'
@@ -10,7 +11,7 @@ export default class Header extends PureComponent {
       <Navbar className='appNavbar'>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href='#'>V2EX</a>
+            <Link to='/'>V2EX</Link>
           </Navbar.Brand>
           <Navbar.Toggle/>
         </Navbar.Header>

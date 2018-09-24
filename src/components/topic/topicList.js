@@ -8,9 +8,9 @@ export default class TopicList extends Component {
       <ListGroup>
         {
           this.props.children.map ? this.props.children.map(c => (
-              <ListGroupItem>{c}</ListGroupItem>
+              <ListGroupItem style={{padding: 0}}>{c}</ListGroupItem>
             ))
-            : <ListGroupItem>{this.props.children}</ListGroupItem>
+            : <ListGroupItem style={{padding: 0}}>{this.props.children}</ListGroupItem>
         }
       </ListGroup>
     )

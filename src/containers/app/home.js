@@ -1,8 +1,12 @@
 import React, {Component} from 'react';
 
+import App from './index';
 import SplitLayout from '../../components/layout/split';
 import TopicPreviewItem from '../../components/topic/topicPreviewItem';
 import TopicList from '../../components/topic/topicList';
+
+import {store} from "../../redux/store";
+import {actions} from "../../redux/modules/app";
 
 
 const FAKE_TOPIC = {
@@ -25,16 +29,19 @@ const FAKE_TOPIC = {
 export default class Home extends Component {
   render() {
     return (
-      <SplitLayout>
-        <SplitLayout.LeftComponents>
-          <TopicList>
-            <TopicPreviewItem member={FAKE_TOPIC.member} topic={FAKE_TOPIC.topic} node={FAKE_TOPIC.node}/>
-          </TopicList>
-        </SplitLayout.LeftComponents>
-        <SplitLayout.RightComponents>
-          Right
-        </SplitLayout.RightComponents>
-      </SplitLayout>
+      <App>
+        <SplitLayout>
+          <SplitLayout.LeftComponents>
+            <TopicList>
+              <TopicPreviewItem member={FAKE_TOPIC.member} topic={FAKE_TOPIC.topic} node={FAKE_TOPIC.node}/>
+            </TopicList>
+            <button onClick={() => store.dispatch(actions.startPageLoading())}>加载</button>
+          </SplitLayout.LeftComponents>
+          <SplitLayout.RightComponents>
+            Right
+          </SplitLayout.RightComponents>
+        </SplitLayout>
+      </App>
     )
   }
 }
