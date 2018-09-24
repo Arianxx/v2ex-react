@@ -1,10 +1,11 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
 import {getPageLoadingState} from "../../redux/modules/app";
 
 
-class _PageLoading extends Component {
+class _PageLoading extends PureComponent {
   state = {
     loading: true
   };
@@ -28,9 +29,13 @@ class _PageLoading extends Component {
   }
 
   render() {
-    return this.props.children;
+    return this.state.loading ? '' : this.props.children;
   }
 }
+
+_PageLoading.propTypes = {
+  loading: PropTypes.bool.required,
+};
 
 const mapStateToProps = (state) => {
   return {

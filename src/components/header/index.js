@@ -1,24 +1,32 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {Navbar, NavItem, Nav} from 'react-bootstrap';
 
 import './header.css'
 
 
-export default class Header extends Component {
+export default class Header extends PureComponent {
   render() {
     return (
-      <Navbar inverse>
+      <Navbar>
         <Navbar.Header>
-          <a href='#'>V2EX</a>
+          <Navbar.Brand>
+            <a href='#'>V2EX</a>
+          </Navbar.Brand>
+          <Navbar.Toggle/>
         </Navbar.Header>
-        <Navbar.Toggle/>
         <Navbar.Collapse>
           <Nav pullRight>
             <NavItem href='#'>
               首页
             </NavItem>
             <NavItem href='#'>
-              最新主题
+              热门主题
+            </NavItem>
+            <NavItem href='#'>
+              全部主题
+            </NavItem>
+            <NavItem href='#'>
+              全部节点
             </NavItem>
           </Nav>
         </Navbar.Collapse>
