@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import './loading.css';
 
 
-class BlockLoading extends Component {
+export class BlockLoading extends Component {
   render() {
     return (
       <div className='blockLoadingContainer loader'>

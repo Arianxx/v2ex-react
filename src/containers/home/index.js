@@ -3,7 +3,7 @@ import React, {PureComponent} from 'react';
 import App from '../app/index';
 import SplitLayout from '../../components/layout/split';
 import TopicPreviewItem from '../../components/topic/topicPreviewItem';
-import TopicList from '../../components/topic/topicList';
+import {TopicList, TopicListByNode} from '../../components/topic/topicList';
 import BlockLoading from '../../components/loading/blockLoading';
 
 import {store} from "../../redux/store";
@@ -43,6 +43,7 @@ export default class Index extends PureComponent {
           </SplitLayout.RightComponents>
         </SplitLayout>
         <BlockLoading/>
+        <TopicListByNode nodeName='python'/>
       </App>
     )
   }
