@@ -28,17 +28,16 @@ class _App extends PureComponent {
       <div>
         <Header/>
         <ErrorBoundary>
-          <PageLoading>
-            <Grid>
-              <Row>
-                <Col xs={1}/>
-                <Col xs={10}>
-                  {this.props.children}
-                </Col>
-                <Col xs={1}/>
-              </Row>
-            </Grid>
-          </PageLoading>
+          <PageLoading/>
+          <Grid>
+            <Row>
+              <Col xs={1}/>
+              <Col xs={10}>
+                {this.props.children}
+              </Col>
+              <Col xs={1}/>
+            </Row>
+          </Grid>
         </ErrorBoundary>
         <Footer/>
       </div>

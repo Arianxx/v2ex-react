@@ -1,13 +1,44 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router';
 import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types';
 
 import {getPageLoadingState} from "../../redux/modules/app";
+import {Timeout} from "./loadingTimeout";
 import {actions as appActions} from "../../redux/modules/app";
+
+import './loading.css';
 
 
 const TIME_OUT = 5;
+
+class PageLoadingShade extends PureComponent {
+  state = {
+    minHeight: document.body.clientHeight
+  };
+
+  onWindowResize = () => {
+    this.setState({
+      minHeight: document.body.clientHeight
+    })
+  };
+
+  componentDidMount() {
+    window.addEventListener('resize', this.onWindowResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onWindowResize);
+  }
+
+  render() {
+    return (
+      <div className='pageLoadingShade' style={{minHeight: this.state.minHeight}}>{null}</div>
+    )
+  }
+}
+
 
 class _PageLoading extends PureComponent {
   state = {
@@ -73,23 +104,35 @@ class _PageLoading extends PureComponent {
     });
   }
 
+  // 箭头函数传给子组件仍能保存this，class直接定义的函数不可以
+  handleTimeoutRefresh = () => {
+    this.props.endPageLoading();
+    this.props.history.push(this.props.history.location.pathname);
+    // todo:存在一个问题，子组件发出的fetch请求可能并非失败，而是延迟返回
+  };
+
   render() {
     if (this.state.loading) {
-      return null;
+      return (<PageLoadingShade/>);
     }
     else if (this.state.loadingTimeout) {
-      // todo 重新加载本组件的页面
-      return "timeout";
+      return (
+        <div>
+          <PageLoadingShade/>
+          <Timeout handleButtonClick={this.handleTimeoutRefresh}/>
+        </div>
+      );
     }
     else {
-      return this.props.children;
+      return null;
     }
   }
 }
 
 _PageLoading.propTypes = {
   loading: PropTypes.bool.isRequired,
-  startPageLoading: PropTypes.func.isRequired
+  startPageLoading: PropTypes.func.isRequired,
+  endPageLoading: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => {
@@ -99,8 +142,9 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  startPageLoading: bindActionCreators(appActions.startPageLoading, dispatch)
+  startPageLoading: bindActionCreators(appActions.startPageLoading, dispatch),
+  endPageLoading: bindActionCreators(appActions.endPageLoading, dispatch),
 });
 
-export const PageLoading = connect(mapStateToProps, mapDispatchToProps)(_PageLoading);
+export const PageLoading = withRouter(connect(mapStateToProps, mapDispatchToProps)(_PageLoading));
 

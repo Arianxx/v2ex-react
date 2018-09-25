@@ -20,7 +20,7 @@ export default class Header extends PureComponent {
             创意工作者们的社区
           </Navbar.Text>
           <Nav pullRight>
-            <NavItem href='#'>
+            <NavItem componentClass={Link} href="/" to="/">
               首页
             </NavItem>
             <NavItem href='#'>
