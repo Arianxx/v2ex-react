@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 
 import './loading.css';
 
 
-export class BlockLoading extends Component {
+export class BlockLoading extends PureComponent {
   render() {
     return (
       <div className='blockLoadingContainer loader'>

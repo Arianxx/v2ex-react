@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React, {Component, PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router';
 import {bindActionCreators} from 'redux';
@@ -124,7 +124,7 @@ class _PageLoading extends PureComponent {
       );
     }
     else {
-      return null;
+      return (<div>{null}</div>);
     }
   }
 }

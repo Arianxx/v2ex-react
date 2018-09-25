@@ -1,15 +1,18 @@
-import React, {PureComponent} from 'react';
+import React, {Component, PureComponent} from 'react';
 import {ListGroup, ListGroupItem} from 'react-bootstrap';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
 import TopicPreviewItem from './topicPreviewItem';
 import {BlockLoading} from "../loading/blockLoading";
 
+import {store} from "../../redux/store";
 import {actions as nodeActions, getNodeTopicsByName} from "../../redux/modules/node";
+import {actions as appActions} from "../../redux/modules/app";
 
 
-export class TopicList extends PureComponent {
+export class TopicList extends Component {
   render() {
     return (
       <ListGroup>
@@ -28,9 +31,11 @@ export class TopicList extends PureComponent {
 class _TopicListByNode extends PureComponent {
   constructor(props) {
     super(props);
+    this.topics = {};
     this.state = {
       nodeName: props.nodeName,
       loading: true,
+      error: false
     }
   }
 
@@ -38,19 +43,20 @@ class _TopicListByNode extends PureComponent {
     this.setState({
       nodeName: nextProps.nodeName,
       loading: true,
-    })
+      error: false
+    });
+
+    this.fetchRemoteData();
+    this.props.pageLoadingEnd();
   }
 
   componentDidMount() {
     this.fetchRemoteData();
-  }
-
-  componentDidUpdate() {
-    this.fetchRemoteData();
+    this.props.pageLoadingEnd();
   }
 
   fetchRemoteData() {
-    this.state.loading ? this.props.fetchTopics(this, {node_name: this.state.nodeName}) : null;
+    this.props.fetchTopics(this, {node_name: this.state.nodeName});
   }
 
   getTopicPreviews() {
@@ -61,10 +67,11 @@ class _TopicListByNode extends PureComponent {
 
   render() {
     if (!this.state.loading) {
-      this.topics = getNodeTopicsByName(this.props.getState(), this.state.nodeName);
+      this.topics = getNodeTopicsByName(store.getState(), this.state.nodeName) || {};
     }
 
-    return this.state.loading ? (<BlockLoading/>) :
+    // todo: 增加 error 提示组件
+    return this.state.error ? "error " : this.state.loading ? (<BlockLoading/>) :
       (<TopicList>
         {
           this.getTopicPreviews()
@@ -75,11 +82,13 @@ class _TopicListByNode extends PureComponent {
 
 _TopicListByNode.propTypes = {
   nodeName: PropTypes.string.isRequired,
-  fetchTopics: PropTypes.func.isRequired
+  fetchTopics: PropTypes.func.isRequired,
+  pageLoadingEnd: PropTypes.func.isRequired
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchTopics: bindActionCreators(nodeActions.getNodeTopicsByName, dispatch)
+  fetchTopics: bindActionCreators(nodeActions.getNodeTopicsByName, dispatch),
+  pageLoadingEnd: bindActionCreators(appActions.endPageLoading, dispatch),
 });
 
-export const TopicListByNode = connect(null, mapDispatchToProps)(_TopicListByNode);
+export const TopicListByNode = connect(null, mapDispatchToProps, null, {pure: false})(_TopicListByNode);

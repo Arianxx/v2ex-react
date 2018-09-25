@@ -48,7 +48,7 @@ export const normalFetchData = (successAction, getRequestFunc) => (component, pa
       store.dispatch(stateActions.finishRequest(component));
       store.dispatch(successAction(data));
     } catch (err) {
-      store.dispatch(stateActions.requestError(component));
+      store.dispatch(stateActions.requestError(component, err));
     }
   }
 };
