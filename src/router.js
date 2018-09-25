@@ -5,7 +5,7 @@ import {
   Switch
 } from 'react-router-dom';
 
-import Home from './containers/app/home';
+import Home from './containers/home';
 
 
 export default class AppRouter extends PureComponent {

@@ -1,9 +1,10 @@
 import React, {PureComponent} from 'react';
 
-import App from './index';
+import App from '../app/index';
 import SplitLayout from '../../components/layout/split';
 import TopicPreviewItem from '../../components/topic/topicPreviewItem';
 import TopicList from '../../components/topic/topicList';
+import BlockLoading from '../../components/loading/blockLoading';
 
 import {store} from "../../redux/store";
 import {actions} from "../../redux/modules/app";
@@ -26,7 +27,7 @@ const FAKE_TOPIC = {
 };
 
 
-export default class Home extends PureComponent {
+export default class Index extends PureComponent {
   render() {
     return (
       <App>
@@ -41,6 +42,7 @@ export default class Home extends PureComponent {
             Right
           </SplitLayout.RightComponents>
         </SplitLayout>
+        <BlockLoading/>
       </App>
     )
   }
