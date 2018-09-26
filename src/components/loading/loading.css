@@ -30,12 +30,16 @@
     z-index: 9996;
 }
 
-.blockLoadingWrapper {
+.blockLoadingWrapper, .blockLoadingError {
     width: 100%;
     position: relative;
     min-height: 200px;
     background-color: #f8f8f8;
     border-color: lightgrey;
+}
+
+.blockLoadingErrorPrompt {
+    font-size: inherit;
 }
 
 .loader {

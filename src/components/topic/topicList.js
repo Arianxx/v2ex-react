@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 
 import TopicPreviewItem from './topicPreviewItem';
 import {BlockLoading} from "../loading/blockLoading";
+import {BlockLoadingError} from "../loading/blockLoaingError";
 
 import {store} from "../../redux/store";
 import {actions as nodeActions, getNodeTopicsByName} from "../../redux/modules/node";
@@ -55,9 +56,6 @@ class _TopicListByNode extends PureComponent {
     this.props.pageLoadingEnd();
   }
 
-  fetchRemoteData() {
-    this.props.fetchTopics(this, {node_name: this.state.nodeName});
-  }
 
   getTopicPreviews() {
     const topics = this.topics;
@@ -65,18 +63,25 @@ class _TopicListByNode extends PureComponent {
       <TopicPreviewItem topic={topics[id]} member={topics[id].member} node={topics[id].node}/>))
   }
 
+  fetchRemoteData = () => {
+    this.props.fetchTopics(this, {node_name: this.state.nodeName});
+  };
+
   render() {
     if (!this.state.loading) {
       this.topics = getNodeTopicsByName(store.getState(), this.state.nodeName) || {};
     }
 
     // todo: 增加 error 提示组件
-    return this.state.error ? "error " : this.state.loading ? (<BlockLoading/>) :
-      (<TopicList>
-        {
-          this.getTopicPreviews()
-        }
-      </TopicList>)
+    return this.state.error ? (<BlockLoadingError fetchRemoteData={this.fetchRemoteData}/>) :
+      this.state.loading ?
+        (<BlockLoading/>) :
+        (<TopicList>
+            {
+              this.getTopicPreviews()
+            }
+          </TopicList>
+        )
   }
 }
 

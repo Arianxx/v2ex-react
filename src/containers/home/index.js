@@ -4,7 +4,6 @@ import App from '../app/index';
 import SplitLayout from '../../components/layout/split';
 import TopicPreviewItem from '../../components/topic/topicPreviewItem';
 import {TopicList, TopicListByNode} from '../../components/topic/topicList';
-import BlockLoading from '../../components/loading/blockLoading';
 
 import {store} from "../../redux/store";
 import {actions} from "../../redux/modules/app";
@@ -37,7 +36,7 @@ export default class Index extends Component {
               <TopicPreviewItem member={FAKE_TOPIC.member} topic={FAKE_TOPIC.topic} node={FAKE_TOPIC.node}/>
             </TopicList>
             <button onClick={() => store.dispatch(actions.startPageLoading())}>加载</button>
-            <TopicListByNode nodeName='python'/>
+            <TopicListByNode nodeName='notfoundnode'/>
           </SplitLayout.LeftComponents>
           <SplitLayout.RightComponents>
             Right
