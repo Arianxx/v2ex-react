@@ -40,17 +40,18 @@ class PageLoadingShade extends PureComponent {
 }
 
 
-class _PageLoading extends PureComponent {
-  state = {
-    loading: true,
-    loadingTimeout: false
-  };
-
+class _PageLoading extends Component {
   constructor(props) {
     super(props);
     this.time = 0;
     this.increaseTimeFunc = [];
-    this.startIncreaseTime();
+    this.state = {
+      loading: this.props.loading,
+      loadingTimeout: false
+    };
+    if (this.state.loading) {
+      this.startIncreaseTime()
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -146,5 +147,5 @@ const mapDispatchToProps = dispatch => ({
   endPageLoading: bindActionCreators(appActions.endPageLoading, dispatch),
 });
 
-export const PageLoading = withRouter(connect(mapStateToProps, mapDispatchToProps)(_PageLoading));
+export const PageLoading = withRouter(connect(mapStateToProps, mapDispatchToProps, null, {pure: false})(_PageLoading));
 

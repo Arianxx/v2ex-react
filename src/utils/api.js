@@ -28,7 +28,7 @@ export const urls = {
 export const getRequest = (url, params = {}, others = {}) => {
   url += '?';
   const paramsArray = [];
-  Object.keys(params).forEach((name) => paramsArray.push('name' + '=' + params[name]));
+  Object.keys(params).forEach((name) => paramsArray.push(name + '=' + params[name]));
   url += paramsArray.join('&');
   return new Request(url, others);
 };
@@ -45,8 +45,8 @@ export const normalFetchData = (successAction, getRequestFunc) => (component, pa
       const res = await fetch(request);
       const data = await res.json();
 
-      store.dispatch(stateActions.finishRequest(component));
       store.dispatch(successAction(data));
+      store.dispatch(stateActions.finishRequest(component));
     } catch (err) {
       store.dispatch(stateActions.requestError(component, err));
     }

@@ -70,10 +70,13 @@ const reducer = (state = initialState, action) => {
         pageLoading: true
       };
     case types.END_PAGE_LOADING:
-    case types.ERROR_REQUEST:
       return {
         pageLoading: false
       };
+    case types.START_REQUEST:
+    case types.FINISH_REQUEST:
+    case types.ERROR_REQUEST:
+      return {};
     default:
       return initialState;
   }

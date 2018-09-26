@@ -30,7 +30,7 @@ API_URLS = [
 # 防止与设定为'/<filename>'的静态文件url冲突，加上/api/前缀
 @app.route('/api/<path:path>')
 def query(path):
-    if '/api/' + request.path not in API_URLS:
+    if request.path not in API_URLS:
         abort(404)
 
     path = app.config.get(('PROXY_HOST_NAME')) + path + '?'

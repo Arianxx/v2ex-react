@@ -30,6 +30,14 @@
     z-index: 9996;
 }
 
+.blockLoadingWrapper {
+    width: 100%;
+    position: relative;
+    min-height: 200px;
+    background-color: #f8f8f8;
+    border-color: lightgrey;
+}
+
 .loader {
     position: absolute;
     top: 50%;

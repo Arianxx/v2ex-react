@@ -37,13 +37,12 @@ export default class Index extends Component {
               <TopicPreviewItem member={FAKE_TOPIC.member} topic={FAKE_TOPIC.topic} node={FAKE_TOPIC.node}/>
             </TopicList>
             <button onClick={() => store.dispatch(actions.startPageLoading())}>加载</button>
+            <TopicListByNode nodeName='python'/>
           </SplitLayout.LeftComponents>
           <SplitLayout.RightComponents>
             Right
           </SplitLayout.RightComponents>
         </SplitLayout>
-        <BlockLoading/>
-        <TopicListByNode nodeName='python'/>
       </App>
     )
   }
