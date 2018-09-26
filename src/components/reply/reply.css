@@ -1,0 +1,46 @@
+.replyItem {
+    background-color: #f8f8f8;
+    border-color: lightgrey;
+    padding: 10px;
+}
+
+.replyItemTable {
+    width: 100%;
+}
+
+.replyImgCol {
+    width: 48px;
+    vertical-align: top;
+}
+
+.replyDivider {
+    width: 10px;
+}
+
+.replyBody {
+    width: auto;
+}
+
+.replyTitle {
+    margin-bottom: 5px;
+}
+
+.replyUsername {
+    font-weight: bold;
+}
+
+.replyCreated {
+    color: grey;
+    font-size: small;
+    margin-left: 10px;
+}
+
+.replyNum {
+    width: 70px;
+}
+
+.replyNumBadge {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}

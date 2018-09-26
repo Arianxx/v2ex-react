@@ -11,6 +11,9 @@ export class BlockLoadingError extends PureComponent {
       <Jumbotron className='blockLoadingError'>
         <div className='blockLoadingErrorPrompt text-center'>
           <p>Oops! 请求出错。</p>
+          <p>
+            <small>错误消息: {String(this.props.error)} </small>
+          </p>
           <p><Button bsStyle="info" onClick={this.props.fetchRemoteData}>重试</Button></p>
         </div>
       </Jumbotron>
@@ -20,4 +23,5 @@ export class BlockLoadingError extends PureComponent {
 
 BlockLoadingError.propTypes = {
   fetchRemoteData: PropTypes.func.isRequired,
+  error: PropTypes.string
 };

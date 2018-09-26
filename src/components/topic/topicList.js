@@ -68,17 +68,16 @@ class _TopicListByNode extends PureComponent {
   };
 
   render() {
-    if (!this.state.loading) {
+    if (!this.state.loading && !this.state.error) {
       this.topics = getNodeTopicsByName(store.getState(), this.state.nodeName) || {};
     }
 
-    // todo: 增加 error 提示组件
-    return this.state.error ? (<BlockLoadingError fetchRemoteData={this.fetchRemoteData}/>) :
+    return this.state.error ? (<BlockLoadingError fetchRemoteData={this.fetchRemoteData} error={this.state.error}/>) :
       this.state.loading ?
         (<BlockLoading/>) :
         (<TopicList>
             {
-              this.getTopicPreviews()
+              this.getTopicPreviews() || []
             }
           </TopicList>
         )
