@@ -2,9 +2,8 @@ import React, {Component} from 'react';
 
 import App from '../app/index';
 import SplitLayout from '../../components/layout/split';
-import TopicPreviewItem from '../../components/topic/components/topicPreviewItem';
-import {TopicList} from '../../components/topic/components/topicList';
-import {ReplyList} from '../../components/reply/replyList';
+import {TopicItem} from "../../components/topic/topicItem";
+import {TopicContent} from "../../components/topic/topicContent";
 
 import {store} from "../../redux/store";
 import {actions} from "../../redux/modules/app";
@@ -35,6 +34,19 @@ const FAKE_REPLY = {
   content_rendered: 'bakabaka!!'
 };
 
+const FAKE_TOPIC_CONTENT = {
+  title: '测试',
+  created: 101111,
+  content_rendered: "asdfasdfas",
+  member: {
+    avatar_normal: "https://cdn.v2ex.com/avatar/4042/d0c6/14809_normal.png?m=1328281768",
+    username: "fasdf",
+  },
+  node: {
+    title: "确认"
+  }
+};
+
 
 export default class Index extends Component {
   render() {
@@ -42,11 +54,8 @@ export default class Index extends Component {
       <App>
         <SplitLayout>
           <SplitLayout.LeftComponents>
-            <TopicList>
-              <TopicPreviewItem member={FAKE_TOPIC.member} topic={FAKE_TOPIC.topic} node={FAKE_TOPIC.node}/>
-            </TopicList>
+            <TopicItem id={5}/>
             <button onClick={() => store.dispatch(actions.startPageLoading())}>加载</button>
-            <ReplyList topicId={1}/>
           </SplitLayout.LeftComponents>
           <SplitLayout.RightComponents>
             Right

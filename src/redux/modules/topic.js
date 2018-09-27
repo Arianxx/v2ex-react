@@ -30,7 +30,7 @@ const fetchActions = {
 
   getHotTopics: normalFetchData(successActions.getHotTopicsSuccess, () => getRequest(urls.getHotTopics)),
 
-  getTopicById: normalFetchSuccess(successActions.getTopicByIdSuccess, param => getRequest(urls.getTopicInfo, param)),
+  getTopicById: normalFetchData(successActions.getTopicByIdSuccess, param => getRequest(urls.getTopicInfo, param)),
 };
 
 export const actions = {...successActions, ...fetchActions};
@@ -71,9 +71,9 @@ const reducers = (state = initialState, action) => {
       };
     case types.GET_TOPIC_BY_ID:
       let id = "";
-      if (action.data) {
-        topics[action.data.id] = action.data;
-        id = action.id;
+      if (action.data[0]) {
+        topics[action.data[0].id] = action.data[0];
+        id = action.data[0].id;
       }
       return {
         topics: topics,

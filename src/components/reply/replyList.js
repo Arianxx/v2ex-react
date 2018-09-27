@@ -38,7 +38,7 @@ class _ReplyList extends FetchInterface {
     if (!this.state.loading && !this.state.error) {
       this.replies = getReplies(this.store.getState(), this.state.topicId) || [];
       return (
-        <ListGroup>
+        <ListGroup style={{marginTop: '10px', borderBottom: "1px solid lightgrey"}}>
           {
             this.getRepliesComponents() || []
           }

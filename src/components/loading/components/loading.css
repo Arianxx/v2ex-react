@@ -35,7 +35,8 @@
     position: relative;
     min-height: 200px;
     background-color: #f8f8f8;
-    border-color: lightgrey;
+    border: 1px solid lightgrey;
+    margin-bottom: 10px;
 }
 
 .blockLoadingErrorPrompt {

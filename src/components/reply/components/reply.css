@@ -1,6 +1,7 @@
 .replyItem {
     background-color: #f8f8f8;
-    border-color: lightgrey;
+    border: 1px solid lightgrey;
+    border-bottom: 0;
     padding: 10px;
 }
 

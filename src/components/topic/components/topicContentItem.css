@@ -1,0 +1,48 @@
+.topicBox {
+    background-color: #f8f8f8;
+    border: 1px solid lightgrey;
+    padding: 10px;
+}
+
+.fr {
+    float: right;
+    margin-top: -10px;
+    margin-right: -10px;
+}
+
+.memberAvatar {
+    min-width: 50px;
+    margin: 10px;
+}
+
+.topicInfo {
+    color: grey;
+}
+
+.topicCreated {
+    margin-left: 10px;
+}
+
+.topicContent {
+    font-size: initial;
+}
+
+.topicContentDivider {
+    margin: 5px 0 5px 0;
+}
+
+.topicContentTitle {
+    margin-top: 10px;
+}
+
+.topicNodeInfo {
+    color: grey;
+}
+
+.topicNodeInfoName {
+    color: grey;
+}
+
+.topicNodeInfoDivider {
+    margin: 0 5px 0 5px;
+}
