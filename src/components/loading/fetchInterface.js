@@ -41,6 +41,7 @@ export class FetchInterface extends PureComponent {
   };
 
   render() {
+    // todo: 将判断loading与error的逻辑封装到这个类中
     if (this.state.error) {
       return (<BlockLoadingError fetchRemoteData={this.fetchRemoteData} error={this.state.error}/>);
     }

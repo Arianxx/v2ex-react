@@ -113,9 +113,12 @@ const reducer = (state = initialState, action) => {
 export default reducer;
 
 
+const tileTopics = topicsObj => Object.keys(topicsObj).map(k => topicsObj[k]);
+
 // selectors
 export const getAllNodes = state => {
-  return state.node.nodes.id;
+  const topicsObj = state.node.nodes.id;
+  return tileTopics(topicsObj);
 };
 
 export const getNodeInfoByName = (state, name) => {
@@ -127,9 +130,11 @@ export const getNodeInfoById = (state, id) => {
 };
 
 export const getNodeTopicsById = (state, id) => {
-  return state.node.topics.node_id[id];
+  const topicsObj = state.node.topics.node_id[id];
+  return tileTopics(topicsObj);
 };
 
 export const getNodeTopicsByName = (state, name) => {
-  return state.node.topics.node_name[name];
+  const topicsObj = state.node.topics.node_name[name];
+  return tileTopics(topicsObj);
 };

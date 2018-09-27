@@ -1,0 +1,69 @@
+.userPanel {
+    background-color: #f8f8f8;
+    border: 1px solid lightgrey;
+    padding: 10px;
+    width: 100%;
+}
+
+.userImgCol {
+    vertical-align: top;
+    width: 70px;
+    padding: 10px;
+}
+
+.userAvatar {
+    margin-top: 10px;
+}
+
+.userPanelDivider {
+    width: 10px;
+}
+
+.userId {
+    color: grey;
+}
+
+.username {
+    margin-top: 10px;
+}
+
+.userJoin {
+    color: grey;
+    margin-left: 10px;
+}
+
+.userBio {
+    font-style: italic;
+    margin: 5px 0 5px 0;
+}
+
+.userProfileTopic {
+    margin-top: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid lightgrey;
+}
+
+.userProfileTopicHeader {
+    padding: 10px;
+}
+
+.userProfileTopicHeader {
+    width: 100%;
+}
+
+.userProfileTopicBody {
+    margin-bottom: -20px;
+}
+
+.userLinks {
+    margin: 5px 0 5px 0;
+}
+
+.userLink {
+    color: grey;
+    margin-right: 5px;
+}
+
+.userTagline {
+    margin: 5px 0 5px 0;
+}

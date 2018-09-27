@@ -3,11 +3,11 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import propTypes from 'prop-types';
 
-import {TopicContentItem} from './components/topicContentItem';
-import {FetchInterface} from "../loading/fetchInterface";
+import {TopicContentItem} from './topicContentItem';
+import {FetchInterface} from "../../loading/fetchInterface";
 
 
-import {actions as topicActions, getTopicById} from "../../redux/modules/topic";
+import {actions as topicActions, getTopicById} from "../../../redux/modules/topic";
 
 class _TopicContent extends FetchInterface {
   constructor(props) {

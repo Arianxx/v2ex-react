@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import propTypes from 'prop-types';
 
-import {TopicContent} from "./topicContent";
+import {TopicContent} from "./components/topicContent";
 import {ReplyList} from "../reply/replyList";
 
 

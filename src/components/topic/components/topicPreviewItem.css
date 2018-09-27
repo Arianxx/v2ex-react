@@ -1,6 +1,6 @@
 .topicPreview {
     background-color: #f8f8f8;
-    border-color: lightgrey;
+    border: 1px solid lightgrey;
     padding: 10px;
 }
 
