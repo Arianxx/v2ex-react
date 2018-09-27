@@ -37,7 +37,7 @@ export class FetchInterface extends PureComponent {
   }
 
   fetchRemoteData = () => {
-    throw new Error('Not Implemented.')
+    throw new Error('Must be inherited.')
   };
 
   render() {
@@ -49,7 +49,7 @@ export class FetchInterface extends PureComponent {
       return (<BlockLoading/>);
     }
     else {
-      throw new Error('Not Implemented.');
+      throw new Error('Must be inherited.');
     }
   }
 }

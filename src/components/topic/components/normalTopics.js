@@ -22,11 +22,11 @@ export class NormalTopicList extends FetchInterface {
   }
 
   fetchTopics = () => {
-    throw new Error('Not Implement.');
+    throw new Error('Must be inherited.');
   };
 
   getTopics = () => {
-    throw new Error('Not Implement.');
+    throw new Error('Must be inherited.');
   };
 
   render() {
