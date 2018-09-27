@@ -1,23 +1,24 @@
 import React, {PureComponent} from 'react';
 
-import {store} from "../../redux/store";
-import {BlockLoading} from "./blockLoading";
-import {BlockLoadingError} from "./blockLoaingError";
+import {BlockLoading} from "./components/blockLoading";
+import {BlockLoadingError} from "./components/blockLoaingError";
 
+import {store} from "../../redux/store";
 import {actions as appActions} from "../../redux/modules/app";
 
 
 export class FetchInterface extends PureComponent {
   constructor(props) {
     super(props);
+    this.store = store;
     this.state = {
       loading: true,
       error: false
     }
   }
 
-  static pageLoadingEnd() {
-    store.dispatch(appActions.endPageLoading());
+  pageLoadingEnd() {
+    this.store.dispatch(appActions.endPageLoading());
   }
 
   componentWillReceiveProps() {
@@ -27,12 +28,12 @@ export class FetchInterface extends PureComponent {
     });
 
     this.fetchRemoteData();
-    FetchInterface.pageLoadingEnd();
+    this.pageLoadingEnd();
   }
 
   componentDidMount() {
     this.fetchRemoteData();
-    FetchInterface.pageLoadingEnd();
+    this.pageLoadingEnd();
   }
 
   fetchRemoteData = () => {

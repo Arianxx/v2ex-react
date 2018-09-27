@@ -17,7 +17,10 @@ export const phpTimeToNow = phpTimeStamp => {
   else if (secondGap >= 3600 && secondGap < 3600 * 24) {
     return parseInt(secondGap / 3600) + '小时前';
   }
-  else {
+  else if (secondGap >= 3600 * 24 && secondGap < 3600 * 24 * 365) {
     return parseInt(secondGap / 86400) + '天前';
+  }
+  else {
+    return parseInt(secondGap / (3600 * 24 * 365)) + '年前';
   }
 };

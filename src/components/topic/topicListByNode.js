@@ -1,31 +1,13 @@
-import React, {Component, PureComponent} from 'react';
-import {ListGroup, ListGroupItem} from 'react-bootstrap';
+import React from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
-import TopicPreviewItem from './topicPreviewItem';
+import TopicPreviewItem from './components/topicPreviewItem';
 import {FetchInterface} from "../loading/fetchInterface";
+import {TopicList} from "./components/topicList";
 
-import {store} from "../../redux/store";
 import {actions as nodeActions, getNodeTopicsByName} from "../../redux/modules/node";
-
-
-export class TopicList extends Component {
-  render() {
-    return (
-      <ListGroup>
-        {
-          this.props.children.map ? this.props.children.map(c => (
-              <ListGroupItem style={{padding: 0}}>{c}</ListGroupItem>
-            ))
-            : <ListGroupItem style={{padding: 0}}>{this.props.children}</ListGroupItem>
-        }
-      </ListGroup>
-    )
-  }
-}
-
 
 class _TopicListByNode extends FetchInterface {
   constructor(props) {
@@ -46,7 +28,7 @@ class _TopicListByNode extends FetchInterface {
 
   render() {
     if (!this.state.loading && !this.state.error) {
-      this.topics = getNodeTopicsByName(store.getState(), this.state.nodeName) || {};
+      this.topics = getNodeTopicsByName(this.store.getState(), this.state.nodeName) || {};
       return (
         <TopicList>
           {

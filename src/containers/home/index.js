@@ -2,10 +2,9 @@ import React, {Component} from 'react';
 
 import App from '../app/index';
 import SplitLayout from '../../components/layout/split';
-import TopicPreviewItem from '../../components/topic/topicPreviewItem';
-import {TopicList, TopicListByNode} from '../../components/topic/topicList';
-import ReplyItem from '../../components/reply/replyItem';
-import {ReplyList} from '../../components/reply/replyList'
+import TopicPreviewItem from '../../components/topic/components/topicPreviewItem';
+import {TopicList} from '../../components/topic/components/topicList';
+import {ReplyList} from '../../components/reply/replyList';
 
 import {store} from "../../redux/store";
 import {actions} from "../../redux/modules/app";
@@ -47,8 +46,6 @@ export default class Index extends Component {
               <TopicPreviewItem member={FAKE_TOPIC.member} topic={FAKE_TOPIC.topic} node={FAKE_TOPIC.node}/>
             </TopicList>
             <button onClick={() => store.dispatch(actions.startPageLoading())}>加载</button>
-            <TopicListByNode nodeName='python'/>
-            <ReplyItem reply={FAKE_REPLY} floor={100}/>
             <ReplyList topicId={1}/>
           </SplitLayout.LeftComponents>
           <SplitLayout.RightComponents>

@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react';
 import {Badge} from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
-import {phpTimeToNow} from "../../utils/format";
+import {phpTimeToNow} from "../../../utils/format";
 
 import './topicPreviewItem.css';
 

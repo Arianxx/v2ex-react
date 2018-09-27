@@ -5,10 +5,10 @@ import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types';
 
 import {getPageLoadingState} from "../../redux/modules/app";
-import {Timeout} from "./loadingTimeout";
+import {Timeout} from "./components/loadingTimeout";
 import {actions as appActions} from "../../redux/modules/app";
 
-import './loading.css';
+import './components/loading.css';
 
 
 const TIME_OUT = 5;
