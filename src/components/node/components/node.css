@@ -1,0 +1,39 @@
+.nodeHeadBox {
+    background-color: #f8f8f8;
+    border: 1px solid lightgrey;
+    vertical-align: top;
+    padding: 10px;
+}
+
+.nodeHeadTable {
+    width: 100%;
+}
+
+.nodeImgCol {
+    width: 60px;
+}
+
+.nodeHeadDivider {
+    width: 15px;
+}
+
+.nodeHeadBody {
+    width: auto;
+}
+
+.nodeHeadNavLink {
+    color: grey;
+}
+
+.nodeHeader {
+    margin-top: 10px;
+    font-size: initial;
+}
+
+.nodeHeadNavDivider {
+    margin: 0 5px 0 5px;
+}
+
+.nodeHeadInfo {
+    width: 100px;
+}
