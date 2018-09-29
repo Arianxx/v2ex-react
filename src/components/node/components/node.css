@@ -27,7 +27,6 @@
 
 .nodeHeader {
     margin-top: 10px;
-    font-size: initial;
 }
 
 .nodeHeadNavDivider {
@@ -36,4 +35,8 @@
 
 .nodeHeadInfo {
     width: 100px;
+}
+
+.nodeHeadImage {
+    border-radius: 360px;
 }

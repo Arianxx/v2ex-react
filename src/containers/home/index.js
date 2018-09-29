@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 
 import App from '../app/index';
 import SplitLayout from '../../components/layout/split';
-import {NodeHeadItem} from "../../components/node/components/nodeHeadItem";
-import {UserProfile} from "../../components/user/userProfile";
+import {NodeHead} from '../../components/node/components/nodeHead';
 
 import {store} from "../../redux/store";
 import {actions} from "../../redux/modules/app";
@@ -23,8 +22,7 @@ export default class Index extends Component {
       <App>
         <SplitLayout>
           <SplitLayout.LeftComponents>
-            <NodeHeadItem node={FAKE_NODE}/>
-            <UserProfile username='livid'/>
+            <NodeHead nodeName='python'/>
             <button onClick={() => store.dispatch(actions.startPageLoading())}>加载</button>
           </SplitLayout.LeftComponents>
           <SplitLayout.RightComponents>
