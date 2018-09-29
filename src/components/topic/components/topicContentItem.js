@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 import {phpTimeToNow} from "../../../utils/format";
 import './topicContentItem.css';
@@ -15,9 +16,13 @@ export class TopicContentItem extends Component {
           </a>
         </div>
         <div className='topicNodeInfo'>
-          <a className='topicNodeInfoName'>V2EX</a>
+          <Link to='/'>
+            <a className='topicNodeInfoName'>V2EX</a>
+          </Link>
           <span className='topicNodeInfoDivider'>{">"}</span>
-          <a className='topicNodeInfoName'>{this.props.topic.node.title}</a>
+          <Link to={`/node/${this.props.topic.node.name}`}>
+            <a className='topicNodeInfoName'>{this.props.topic.node.title}</a>
+          </Link>
         </div>
         <h3 className='topicContentTitle'>{this.props.topic.title}</h3>
         <small className='topicInfo'>

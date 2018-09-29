@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react';
+import {Link} from 'react-router-dom';
 import {Badge} from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
@@ -28,8 +29,12 @@ export default class TopicPreviewItem extends PureComponent {
             </td>
             <td className='topicDivider'>{null}</td>
             <td className='topicPreviewBody'>
-              <h5 className='topicTitle'><a href='#' className='topicTitleLink'>{this.props.topic.title}</a></h5>
-              <span className='topicNode'>{this.props.node.title}</span>
+              <Link to={`/topic/${this.props.topic.id}`}>
+                <h5 className='topicTitle'><a href='#' className='topicTitleLink'>{this.props.topic.title}</a></h5>
+              </Link>
+              <Link to={`/node/${this.props.node.name}`}>
+                <span className='topicNode'>{this.props.node.title}</span>
+              </Link>
               <DotDivider/>
 
               <strong><span className='topicMemberName'>{this.props.member.username}</span></strong>

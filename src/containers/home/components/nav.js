@@ -34,6 +34,7 @@ export class NodeNav extends Component {
       <Tabs
         activeKey={this.state.key}
         onSelect={key => this.setState({key})}
+        style={{marginBottom: "20px"}}
       >
         {
           this.getTabs()

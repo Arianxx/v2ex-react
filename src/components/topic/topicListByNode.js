@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {NormalTopicList} from "./components/normalTopics";
 
@@ -26,3 +27,7 @@ export class TopicListByNode extends NormalTopicList {
     return getNodeTopicsByName(this.store.getState(), this.state.nodeName);
   };
 }
+
+TopicListByNode.propTypes = {
+  nodeName: PropTypes.string.isRequired
+};

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import './node.css';
@@ -20,14 +21,17 @@ export class NodeHeadItem extends Component {
               />
             </td>
             <td className='nodeHeadDivider'>{null}</td>
-            <td className='nodeHeadBody'>
+            <td className='nodeHeadBody' style={{paddingRight: "10px"}}>
               <div className='nodeHeadNav'>
-                <a className='nodeHeadNavLink'><span>V2EX</span></a>
+                <Link to='/'>
+                  <a className='nodeHeadNavLink'><span>V2EX</span></a>
+                </Link>
                 <span className='nodeHeadNavDivider'>{">"}</span>
-                <span>{this.props.node.title}</span>
+                <Link to={`/node/${this.props.node.name}`} style={{color: "grey"}}>
+                  <span>{this.props.node.title}</span>
+                </Link>
               </div>
-              <div className='nodeHeader'>
-                {this.props.node.header}
+              <div className='nodeHeader' dangerouslySetInnerHTML={{__html: this.props.node.header}}>
               </div>
             </td>
             <td className='nodeHeadInfo'>

@@ -1,15 +1,9 @@
 import {getRequest, normalFetchData, normalFetchSuccess, urls} from "../../utils/api";
 
 const initialState = {
-  nodes: {
-    id: {}, // 以节点id为键，节点对象为值的字典
-    name: {} // 以节点名为键，节点对象为值的字典
-  },
-  node: "", // 节点id值，对应nodes.id中的一个节点对象
-  topics: {
-    node_id: {},
-    node_name: {}
-  } // 节点对应的主题对象
+  nodeInfo: {},
+  nodes: [],
+  topics: []
 };
 
 
@@ -69,41 +63,20 @@ const putTopics = (data, topics) => {
 
 // reducers
 const reducer = (state = initialState, action) => {
-  let nodes = {
-    ...state.nodes
-  };
-  let topics = {
-    ...state.topics
-  };
   switch (action.type) {
     case types.GET_ALL_NODES:
-      nodes = {
-        id: {},
-        name: {},
-      };
-      action.data && action.data.forEach(d => {
-        nodes.id[d.id] = d;
-        nodes.name[d.name] = d;
-      });
       return {
-        nodes: nodes
+        nodes: action.data
       };
     case types.GET_NODE_INFO_BY_NAME:
     case types.GET_NODE_INFO_BY_ID:
-      const d = action.data || {};
-      if (d) {
-        nodes.id[d.id] = d;
-        nodes.name[d.name] = d;
-      }
       return {
-        node: d.id,
-        nodes: nodes
+        nodeInfo: action.data
       };
     case types.GET_NODE_TOPICS_BY_ID:
     case types.GET_NODE_TOPICS_BY_NAME:
-      topics = putTopics(action.data, topics);
       return {
-        topics: topics
+        topics: action.data
       };
     default:
       return state;
@@ -113,28 +86,26 @@ const reducer = (state = initialState, action) => {
 export default reducer;
 
 
-const tileTopics = topicsObj => Object.keys(topicsObj).map(k => topicsObj[k]).reverse();
-
 // selectors
 export const getAllNodes = state => {
-  const topicsObj = state.node.nodes.id;
-  return tileTopics(topicsObj);
+  return state.node.nodes;
 };
 
-export const getNodeInfoByName = (state, name) => {
-  return state.node.nodes.name[name];
+export const getNodeInfoByName = (state) => {
+  return state.node.nodeInfo;
 };
 
-export const getNodeInfoById = (state, id) => {
-  return state.node.nodes.id[id];
+export const getNodeInfoById = (state) => {
+  return state.node.nodeInfo;
 };
 
-export const getNodeTopicsById = (state, id) => {
-  const topicsObj = state.node.topics.node_id[id];
-  return tileTopics(topicsObj);
+export const getNodeTopicsById = (state) => {
+  return state.node.topics;
 };
 
-export const getNodeTopicsByName = (state, name) => {
-  const topicsObj = state.node.topics.node_name[name];
-  return tileTopics(topicsObj);
+export const getNodeTopicsByName = (state) => {
+  return state.node.topics;
 };
+
+// 之前有过更复杂的state，重构时觉得不需要就简化了逻辑。
+// 但是为了避免到处改调用名称，保留了以前的函数名。因此存在这几个名称不同但做的事相同的函数。
