@@ -6,3 +6,7 @@ html {
 body {
     padding-bottom: 50px;
 }
+
+img {
+    max-height: 400px;
+}

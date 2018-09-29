@@ -5,7 +5,6 @@ import {TopicItem} from "../../components/topic/topicItem";
 
 export default class Topic extends Component {
   render() {
-    console.log(this);
     return (
       <TopicItem id={this.props.match.params.id}/>
     )

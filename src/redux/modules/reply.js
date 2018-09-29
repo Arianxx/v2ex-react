@@ -39,4 +39,4 @@ export default reducer;
 
 
 // selectors
-export const getReplies = state => state.reply.replies;
+export const getReplies = state => state.reply.replies.reverse();

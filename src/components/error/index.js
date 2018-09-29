@@ -20,7 +20,7 @@ export default class ErrorBoundary extends PureComponent {
       return (
         <Jumbotron className='error_prompt text-center'>
           <div>
-            <h2>App内部发生了错误</h2>
+            <h2>App发生了内部错误</h2>
             <p>
               请联系管理员并向他扔鸡蛋。由于他的某些不当处理，App内部弹出了致命错误。
             </p>

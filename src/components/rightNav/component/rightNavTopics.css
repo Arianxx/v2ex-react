@@ -1,0 +1,24 @@
+.rightNavBox {
+    margin-bottom: 20px;
+}
+
+.rightNavTitle {
+    color: grey;
+    font-size: large;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.rightNavLink {
+    color: grey;
+    text-decoration: none;
+}
+
+.rightNavBody a {
+    text-decoration: none;
+}
+
+a[class~=rightNavLink] {
+    text-decoration: none;
+}

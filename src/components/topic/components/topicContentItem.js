@@ -26,9 +26,11 @@ export class TopicContentItem extends Component {
         </div>
         <h3 className='topicContentTitle'>{this.props.topic.title}</h3>
         <small className='topicInfo'>
+          <Link to={`/user/${this.props.topic.member.username}`} style={{color: 'grey'}}>
           <span className='topicUsername'>
             {this.props.topic.member.username}
           </span>
+          </Link>
           <span className='topicCreated'>
             {phpTimeToNow(this.props.topic.created)}
           </span>

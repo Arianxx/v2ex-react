@@ -27,7 +27,7 @@ export default class Header extends PureComponent {
               热门主题
             </NavItem>
             <NavItem href='#'>
-              全部主题
+              最新主题
             </NavItem>
             <NavItem href='#'>
               全部节点

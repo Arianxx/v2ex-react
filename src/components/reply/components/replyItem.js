@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react';
+import {Link} from 'react-router-dom';
 import {Badge} from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
@@ -24,9 +25,11 @@ export default class ReplyItem extends PureComponent {
             <td className='replyDivider'>{null}</td>
             <td className='replyBody'>
               <p className='replyTitle'>
-              <span className='replyUsername'>
-                {this.props.reply.member.username}
-              </span>
+                <Link to={`/user/${this.props.reply.member.username}`} style={{color: "grey"}}>
+                  <span className='replyUsername'>
+                    {this.props.reply.member.username}
+                  </span>
+                </Link>
                 <span className='replyCreated'>
                 {phpTimeToNow(this.props.reply.created)}
               </span>

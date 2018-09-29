@@ -60,14 +60,14 @@ const reducers = (state = initialState, action) => {
       result = putTopics(action.data, topics, latestTopics);
       return {
         topics: result[0],
-        latestTopics: result[1]
+        latestTopics: action.data
       };
     case types.GET_HOT_TOPICS:
       const hotTopics = [];
       result = putTopics(action.data, topics, hotTopics);
       return {
         topics: result[0],
-        hotTopics: result[1]
+        hotTopics: action.data
       };
     case types.GET_TOPIC_BY_ID:
       let id = "";
@@ -98,11 +98,11 @@ const getTopics = (state, topicsId) => {
 };
 
 export const getLatestTopics = state => {
-  return getTopics(state, state.topic.latestTopics);
+  return state.topic.latestTopics;
 };
 
 export const getHotTopics = state => {
-  return getTopics(state, state.topic.hotTopics);
+  return state.topic.hotTopics;
 };
 
 export const getTopicById = (state, id) => {

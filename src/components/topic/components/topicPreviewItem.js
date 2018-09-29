@@ -20,31 +20,37 @@ export default class TopicPreviewItem extends PureComponent {
         <table className='topicPreviewTable'>
           <tr>
             <td className='topicImgCol'>
-              <img
-                width={64}
-                height={64}
-                src={this.props.member.avatar_mini}
-                alt="Topic creator's avatar"
-              />
+              <Link to={`user/${this.props.member.username}`}>
+                <img
+                  width={64}
+                  height={64}
+                  src={this.props.member.avatar_mini}
+                  alt="Topic creator's avatar"
+                />
+              </Link>
             </td>
             <td className='topicDivider'>{null}</td>
             <td className='topicPreviewBody'>
-              <Link to={`/topic/${this.props.topic.id}`}>
+              <Link to={`topic/${this.props.topic.id}`}>
                 <h5 className='topicTitle'><a href='#' className='topicTitleLink'>{this.props.topic.title}</a></h5>
               </Link>
-              <Link to={`/node/${this.props.node.name}`}>
+              <Link to={`node/${this.props.node.name}`}>
                 <span className='topicNode'>{this.props.node.title}</span>
               </Link>
               <DotDivider/>
 
-              <strong><span className='topicMemberName'>{this.props.member.username}</span></strong>
+              <Link to={`user/${this.props.member.username}`} style={{color: "grey"}}>
+                <strong><span className='topicMemberName'>{this.props.member.username}</span></strong>
+              </Link>
               <DotDivider/>
 
               <span className='topicTime'>{phpTimeToNow(this.props.topic.created)}</span>
               <DotDivider/>
 
               <span className='topicLastReplyPrompt'>最后回复来自</span>
-              <span className='topicLastReply'>{this.props.topic.last_reply_by}</span>
+              <Link to={`user/${this.props.topic.last_reply_by}`} style={{color: "grey"}}>
+                <span className='topicLastReply'>{this.props.topic.last_reply_by}</span>
+              </Link>
 
             </td>
             <td className='topicReplies'>
