@@ -29,7 +29,7 @@ export default class TopicPreviewItem extends PureComponent {
             <td className='topicDivider'>{null}</td>
             <td className='topicPreviewBody'>
               <h5 className='topicTitle'><a href='#' className='topicTitleLink'>{this.props.topic.title}</a></h5>
-              <span className='topicNode'>{this.props.node.name}</span>
+              <span className='topicNode'>{this.props.node.title}</span>
               <DotDivider/>
 
               <strong><span className='topicMemberName'>{this.props.member.username}</span></strong>

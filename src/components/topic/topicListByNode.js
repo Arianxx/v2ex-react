@@ -1,6 +1,5 @@
 import React from 'react';
 
-import {store} from "../../redux/store";
 import {NormalTopicList} from "./components/normalTopics";
 
 import {actions as nodeActions, getNodeTopicsByName} from "../../redux/modules/node";
@@ -11,11 +10,19 @@ export class TopicListByNode extends NormalTopicList {
     this.state['nodeName'] = props.nodeName;
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      nodeName: nextProps.nodeName
+    });
+
+    super.componentWillReceiveProps(nextProps);
+  }
+
   fetchTopics = () => {
-    store.dispatch(nodeActions.getNodeTopicsByName(this, {node_name: this.state.nodeName}));
+    this.store.dispatch(nodeActions.getNodeTopicsByName(this, {node_name: this.state.nodeName}));
   };
 
   getTopics = () => {
-    return getNodeTopicsByName(store.getState(), this.state.nodeName);
+    return getNodeTopicsByName(this.store.getState(), this.state.nodeName);
   };
 }

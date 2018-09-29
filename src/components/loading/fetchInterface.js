@@ -24,11 +24,15 @@ export class FetchInterface extends PureComponent {
   componentWillReceiveProps() {
     this.setState({
       loading: true,
-      error: false
+      error: false,
     });
+  }
 
-    this.fetchRemoteData();
-    this.pageLoadingEnd();
+  componentDidUpdate() {
+    if (this.state.loading && !this.state.error) {
+      this.fetchRemoteData();
+      this.pageLoadingEnd();
+    }
   }
 
   componentDidMount() {

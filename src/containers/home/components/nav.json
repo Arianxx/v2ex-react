@@ -1,0 +1,172 @@
+{
+  "nav": [
+    {
+      "title": "技术",
+      "name": "tech",
+      "subNode": [
+        {
+          "title": "程序员",
+          "name": "programmer"
+        },
+        {
+          "title": "Python",
+          "name": "python"
+        },
+        {
+          "title": "Android",
+          "name": "android"
+        },
+        {
+          "title": "Linux",
+          "name": "linux"
+        },
+        {
+          "title": "node.js",
+          "name": "nodejs"
+        },
+        {
+          "title": "云计算",
+          "name": "cloud"
+        },
+        {
+          "title": "宽带症候群",
+          "name": "bb"
+        }
+      ]
+    },
+    {
+      "title": "创意",
+      "name": "creative",
+      "subNode": [
+        {
+          "title": "分享创造",
+          "name": "create"
+        },
+        {
+          "title": "设计",
+          "name": "design"
+        },
+        {
+          "title": "奇思妙想",
+          "name": "ideas"
+        }
+      ]
+    },
+    {
+      "title": "好玩",
+      "name": "play",
+      "subNode": [
+        {
+          "title": "分享发现",
+          "name": "share"
+        },
+        {
+          "title": "电子游戏",
+          "name": "games"
+        },
+        {
+          "title": "剧集",
+          "name": "tv"
+        },
+        {
+          "title": "音乐",
+          "name": "music"
+        },
+        {
+          "title": "旅游",
+          "name": "travel"
+        },
+        {
+          "title": "Android",
+          "name": "android"
+        },
+        {
+          "title": "午夜俱乐部",
+          "name": "afterdark"
+        }
+      ]
+    },
+    {
+      "title": "Apple",
+      "name": "apple",
+      "subNode": [
+        {
+          "title": "macOS",
+          "name": "macos"
+        },
+        {
+          "title": "iPhone",
+          "name": "iphone"
+        },
+        {
+          "title": "iPad",
+          "name": "ipad"
+        },
+        {
+          "title": "mbp",
+          "name": "mbp"
+        },
+        {
+          "title": "iMac",
+          "name": "imac"
+        },
+        {
+          "title": "Apple",
+          "name": "apple"
+        }
+      ]
+    },
+    {
+      "title": "酷工作",
+      "name": "jobs",
+      "subNode": [
+        {
+          "title": "酷工作",
+          "name": "jobs"
+        },
+        {
+          "title": "求职",
+          "name": "cv"
+        },
+        {
+          "title": "职场话题",
+          "name": "career"
+        },
+        {
+          "title": "外包",
+          "name": "outsourcing"
+        }
+      ]
+    },
+    {
+      "title": "交易",
+      "name": "deals",
+      "subNode": [
+        {
+          "title": "二手交易",
+          "name": "all4all"
+        },
+        {
+          "title": "物物交换",
+          "name": "exchange"
+        },
+        {
+          "title": "免费赠送",
+          "name": "free"
+        },
+        {
+          "title": "域名",
+          "name": "dn"
+        },
+        {
+          "title": "团购",
+          "name": "tuan"
+        },
+        {
+          "title": "安全提示",
+          "name": "68631"
+        }
+      ]
+    }
+  ]
+}

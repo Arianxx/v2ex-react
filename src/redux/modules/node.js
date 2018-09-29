@@ -113,7 +113,7 @@ const reducer = (state = initialState, action) => {
 export default reducer;
 
 
-const tileTopics = topicsObj => Object.keys(topicsObj).map(k => topicsObj[k]);
+const tileTopics = topicsObj => Object.keys(topicsObj).map(k => topicsObj[k]).reverse();
 
 // selectors
 export const getAllNodes = state => {

@@ -31,7 +31,7 @@ export class NormalTopicList extends FetchInterface {
 
   render() {
     if (!this.state.loading && !this.state.error) {
-      this.topics = this.getTopics(this.store.getState());
+      this.topics = this.getTopics();
       return (
         <TopicList>
           {

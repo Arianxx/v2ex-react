@@ -1,0 +1,29 @@
+.subNodeNavWrapper {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #d3d3d3;
+}
+
+.subNodeNav {
+    margin: 0 0 0 5px;
+    padding: 10px;
+}
+
+.subNodeNav a {
+    text-decoration: none;
+}
+
+.nodeNavLink {
+    margin-right: 10px;
+    color: grey;
+    font-size: initial;
+    text-decoration: none;
+}
+
+.nodeNavLink:active {
+    text-decoration: none;
+}
+
+a[class~=active] {
+    color: #66ccff;
+}
