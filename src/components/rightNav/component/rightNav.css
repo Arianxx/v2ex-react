@@ -22,3 +22,7 @@
 a[class~=rightNavLink] {
     text-decoration: none;
 }
+
+.rightNavHead {
+    background-color: #f8f8f8;
+}
