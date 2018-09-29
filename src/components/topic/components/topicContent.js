@@ -20,6 +20,14 @@ class _TopicContent extends FetchInterface {
     this.props.getTopicById(this, {id: this.state.topicId});
   };
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      topicId: nextProps.topicId,
+    });
+
+    super.componentWillReceiveProps(nextProps);
+  }
+
   getTopic() {
     return (<TopicContentItem topic={this.topic}/>);
   }

@@ -7,7 +7,8 @@ import Topic from '../topic';
 import Node from '../node';
 import User from '../user';
 import RightNavNewestTopics from '../../components/rightNav/newestTopics';
-import RightNavHotTopics from '../../components/rightNav/hotTopics'
+import RightNavHotTopics from '../../components/rightNav/hotTopics';
+import RightNavSiteInfo from '../../components/rightNav/siteInfoNav';
 
 
 export default class Router extends Component {
@@ -25,6 +26,7 @@ export default class Router extends Component {
         <SplitLayout.RightComponents>
           <RightNavNewestTopics/>
           <RightNavHotTopics/>
+          <RightNavSiteInfo/>
         </SplitLayout.RightComponents>
       </SplitLayout>
     )

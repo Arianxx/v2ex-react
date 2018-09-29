@@ -21,6 +21,14 @@ class _ReplyList extends FetchInterface {
     this.props.getTopicReplies(this, {topic_id: this.props.topicId});
   };
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      topicId: nextProps.topicId
+    });
+
+    super.componentWillReceiveProps(nextProps);
+  }
+
   getRepliesComponents() {
     const replies = this.replies;
     let index = 0;

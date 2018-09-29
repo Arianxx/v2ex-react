@@ -20,7 +20,7 @@ export default class TopicPreviewItem extends PureComponent {
         <table className='topicPreviewTable'>
           <tr>
             <td className='topicImgCol'>
-              <Link to={`user/${this.props.member.username}`}>
+              <Link to={`/user/${this.props.member.username}`}>
                 <img
                   width={64}
                   height={64}
@@ -31,15 +31,15 @@ export default class TopicPreviewItem extends PureComponent {
             </td>
             <td className='topicDivider'>{null}</td>
             <td className='topicPreviewBody'>
-              <Link to={`topic/${this.props.topic.id}`}>
+              <Link to={`/topic/${this.props.topic.id}`}>
                 <h5 className='topicTitle'><a href='#' className='topicTitleLink'>{this.props.topic.title}</a></h5>
               </Link>
-              <Link to={`node/${this.props.node.name}`}>
+              <Link to={`/node/${this.props.node.name}`}>
                 <span className='topicNode'>{this.props.node.title}</span>
               </Link>
               <DotDivider/>
 
-              <Link to={`user/${this.props.member.username}`} style={{color: "grey"}}>
+              <Link to={`/user/${this.props.member.username}`} style={{color: "grey"}}>
                 <strong><span className='topicMemberName'>{this.props.member.username}</span></strong>
               </Link>
               <DotDivider/>
@@ -48,7 +48,7 @@ export default class TopicPreviewItem extends PureComponent {
               <DotDivider/>
 
               <span className='topicLastReplyPrompt'>最后回复来自</span>
-              <Link to={`user/${this.props.topic.last_reply_by}`} style={{color: "grey"}}>
+              <Link to={`/user/${this.props.topic.last_reply_by}`} style={{color: "grey"}}>
                 <span className='topicLastReply'>{this.props.topic.last_reply_by}</span>
               </Link>
 

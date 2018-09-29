@@ -3,14 +3,14 @@ import {Link} from 'react-router-dom';
 import {ListGroup, ListGroupItem} from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
-import './rightNavTopics.css';
+import './rightNav.css';
 
 
 export class RightNavTopics extends Component {
   getTopics() {
     return this.props.topics.map(t => (
       <Link to={`/topic/${t.id}`} className='rightNavLink'>
-        <ListGroupItem action variant="light">
+        <ListGroupItem variant="light">
           {t.title}
         </ListGroupItem>
       </Link>
