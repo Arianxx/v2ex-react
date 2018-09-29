@@ -31,19 +31,14 @@ export class NodeNav extends Component {
 
   render() {
     return (
-      <div className='nodeNav'>
-        <Tabs
-          activeKey={this.state.key}
-          onSelect={key => this.setState({key})}
-        >
-          {
-            this.getTabs()
-          }
-        </Tabs>
-        <div className='subNodeNav nodeNavMore'>
-          <span><a href="#" className='nodeNavLink'>查看全部主题</a></span>
-        </div>
-      </div>
+      <Tabs
+        activeKey={this.state.key}
+        onSelect={key => this.setState({key})}
+      >
+        {
+          this.getTabs()
+        }
+      </Tabs>
     )
   }
 }

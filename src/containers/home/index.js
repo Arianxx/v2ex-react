@@ -1,22 +1,23 @@
 import React, {Component} from 'react';
+import {Route, Switch} from 'react-router-dom';
 
-import App from '../app/index';
+import App from '../app';
+import Home from './home';
 import SplitLayout from '../../components/layout/split';
-import {NodeNav} from "./components/nav";
-
-import navJson from './components/nav.json';
 
 
-export default class Index extends Component {
+export default class Router extends Component {
   render() {
     return (
       <App>
         <SplitLayout>
           <SplitLayout.LeftComponents>
-            <NodeNav navJson={navJson}/>
+            <Switch>
+              <Route exact path={`${this.props.match.url}`} component={Home}/>
+            </Switch>
           </SplitLayout.LeftComponents>
           <SplitLayout.RightComponents>
-            右侧栏
+            侧栏
           </SplitLayout.RightComponents>
         </SplitLayout>
       </App>

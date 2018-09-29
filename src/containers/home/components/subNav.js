@@ -49,6 +49,9 @@ export class SubNode extends Component {
           </div>
         </div>
         <TopicListByNode nodeName={this.state.selected}/>
+        <div className='subNodeNav nodeNavMore'>
+          <span><a href="#" className='nodeNavLink'>查看全部主题</a></span>
+        </div>
       </div>
     )
   }
