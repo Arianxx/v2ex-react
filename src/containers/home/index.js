@@ -9,6 +9,7 @@ import User from '../user';
 import RightNavNewestTopics from '../../components/rightNav/newestTopics';
 import RightNavHotTopics from '../../components/rightNav/hotTopics';
 import RightNavSiteInfo from '../../components/rightNav/siteInfoNav';
+import {AllNode} from "../../components/node/allNodes";
 
 
 export default class Router extends Component {
@@ -20,6 +21,7 @@ export default class Router extends Component {
             <Route exact path='/topic/:id' component={Topic}/>
             <Route exact path='/node/:name' component={Node}/>
             <Route exact path='/user/:username' component={User}/>
+            <Route exact path='/allNodes' component={AllNode}/>
             <Route path='/' component={Home}/>
           </Switch>
         </SplitLayout.LeftComponents>

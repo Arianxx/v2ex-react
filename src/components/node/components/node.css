@@ -41,3 +41,36 @@
 .nodeHeadImage {
     border-radius: 360px;
 }
+
+.allNodes {
+    width: 100%;
+}
+
+.allNodeHead {
+    background-color: #f8f8f8;
+    padding: 10px;
+}
+
+.allNodeTitle {
+    color: grey;
+    font-weight: bold;
+    font-size: large;
+    margin: 0;
+}
+
+.nodeButton {
+    background-color: white;
+    margin: 10px;
+}
+
+.moreButton {
+    box-shadow: none;
+    outline: none;
+}
+
+.moreButton:focus {
+    box-shadow: none;
+    outline: none;
+    border-color: #ccc;
+    background-color: white;
+}

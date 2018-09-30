@@ -23,13 +23,13 @@ export default class Header extends PureComponent {
             <NavItem componentClass={Link} href="/" to="/">
               首页
             </NavItem>
-            <NavItem href='#'>
+            <NavItem>
               热门主题
             </NavItem>
             <NavItem href='#'>
               最新主题
             </NavItem>
-            <NavItem href='#'>
+            <NavItem componentClass={Link} href='/allNodes' to='/allNodes'>
               全部节点
             </NavItem>
           </Nav>

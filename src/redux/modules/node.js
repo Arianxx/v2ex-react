@@ -66,16 +66,19 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case types.GET_ALL_NODES:
       return {
+        ...state,
         nodes: action.data
       };
     case types.GET_NODE_INFO_BY_NAME:
     case types.GET_NODE_INFO_BY_ID:
       return {
+        ...state,
         nodeInfo: action.data
       };
     case types.GET_NODE_TOPICS_BY_ID:
     case types.GET_NODE_TOPICS_BY_NAME:
       return {
+        ...state,
         topics: action.data
       };
     default:
