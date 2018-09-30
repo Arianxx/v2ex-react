@@ -34,10 +34,12 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case types.GET_MEMBER_INFO:
       return {
+        ...state,
         member: action.data
       };
     case types.GET_MEMBER_TOPICS:
       return {
+        ...state,
         memberTopics: action.data
       };
     default:

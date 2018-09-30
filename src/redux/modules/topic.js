@@ -59,6 +59,7 @@ const reducers = (state = initialState, action) => {
       const latestTopics = [];
       result = putTopics(action.data, topics, latestTopics);
       return {
+        ...state,
         topics: result[0],
         latestTopics: action.data
       };
@@ -66,6 +67,7 @@ const reducers = (state = initialState, action) => {
       const hotTopics = [];
       result = putTopics(action.data, topics, hotTopics);
       return {
+        ...state,
         topics: result[0],
         hotTopics: action.data
       };
@@ -76,6 +78,7 @@ const reducers = (state = initialState, action) => {
         id = action.data[0].id;
       }
       return {
+        ...state,
         topics: topics,
         topic: id
       };

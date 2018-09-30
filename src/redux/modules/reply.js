@@ -28,6 +28,7 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case types.GET_TOPIC_REPLIES:
       return {
+        ...state,
         replies: action.data
       };
     default:
