@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import {TopicListByNode} from "../../../components/topic/topicListByNode";
@@ -50,7 +51,7 @@ export class SubNode extends Component {
         </div>
         <TopicListByNode nodeName={this.state.selected}/>
         <div className='subNodeNav nodeNavMore'>
-          <span><a href="#" className='nodeNavLink'>查看更多主题</a></span>
+          <span><Link to={`/node/${this.state.selected}`} className='nodeNavLink'>查看更多主题</Link></span>
         </div>
       </div>
     )
