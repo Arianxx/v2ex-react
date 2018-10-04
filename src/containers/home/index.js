@@ -6,6 +6,8 @@ import Home from './home';
 import Topic from '../topic';
 import Node from '../node';
 import User from '../user';
+import {NewestTopics} from "../topic/newestTopics";
+import {HotTopics} from "../topic/hotTopics";
 import RightNavNewestTopics from '../../components/rightNav/newestTopics';
 import RightNavHotTopics from '../../components/rightNav/hotTopics';
 import RightNavSiteInfo from '../../components/rightNav/siteInfoNav';
@@ -21,6 +23,8 @@ export default class Router extends Component {
             <Route exact path='/topic/:id' component={Topic}/>
             <Route exact path='/node/:name' component={Node}/>
             <Route exact path='/user/:username' component={User}/>
+            <Route exact path='/hot' component={HotTopics}/>
+            <Route exact path='/newest' component={NewestTopics}/>
             <Route exact path='/allNodes' component={AllNode}/>
             <Route path='/' component={Home}/>
           </Switch>

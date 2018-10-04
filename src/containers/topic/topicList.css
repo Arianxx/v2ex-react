@@ -1,0 +1,15 @@
+.topicsHeaderBox {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d3d3d3;
+    border-bottom: 0;
+    background-color: #f8f8f8;
+}
+
+.topicsHeader {
+    margin: 0;
+    font-size: large;
+    font-weight: bold;
+    color: grey;
+}
+
