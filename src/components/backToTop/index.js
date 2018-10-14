@@ -13,7 +13,6 @@ export class BackToTop extends PureComponent {
   }
 
   componentDidMount() {
-    this.node = document.getElementById('backBox');
     window.addEventListener('scroll', this.handleWindowScroll);
   }
 
