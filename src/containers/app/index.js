@@ -5,6 +5,7 @@ import Header from '../../components/header';
 import Footer from '../../components/footer';
 import {PageLoading} from '../../components/loading/pageLoading';
 import ErrorBoundary from '../../components/error';
+import {BackToTop} from "../../components/backToTop";
 
 import './base.css';
 
@@ -24,6 +25,7 @@ export default class App extends Component {
               <Col xs={1}/>
             </Row>
           </Grid>
+          <BackToTop/>
           <PageLoading/>
         </ErrorBoundary>
         <Footer/>
